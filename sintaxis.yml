@@ -23,12 +23,10 @@
        final linea
 
   tasks: 
-    - name: Crear archivo hosts
-      template: src=hosts.j2 dest=/tmp/hosts owner=root group=root mode=0644
-    - name: crear archivo hosts yaml
-      template:
-        src: hosts.j2
-        dest: /tmp/hosts
-        owner: root
-        group: root
-        mode: 0644
+    - debug: var=miip
+    - debug: var=milista_larga
+    - debug: var=midic
+    - debug: var=midic.bd
+    - debug: var=midic_long
+    - debug: var=mitexto
+    - debug: var=milinealarga
