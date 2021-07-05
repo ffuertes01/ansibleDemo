@@ -1,0 +1,12 @@
+---
+- name: Primer Play
+  hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: Instalar vim
+      yum: name=vim state=latest
+    - include: instalar_apache2.yml
+
+- name: Segundo Play
+  include: segundo_play.yml

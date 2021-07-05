@@ -1,0 +1,10 @@
+- name: Instalar apache2
+  yum: name=httpd state=latest
+- name: Iniciar y habilitar el servicio
+  service: name=httpd state=started enabled=true
+- name: Copiar archivo de configuracion
+  copy: src=httpd.conf dest=/etc/httpd/conf/httpd.conf
+  notify: restart_httpd
+
+- name: Copiar archivo index.html
+  template: src=index.html.j2 dest=/var/www/html/index.html

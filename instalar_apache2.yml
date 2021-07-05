@@ -1,0 +1,7 @@
+---
+- name: Instalar apache2
+  yum: name=httpd state=latest
+- name: Iniciar el servicio
+  service: name=httpd state=started
+- name: Habilitar el servicio
+  service: name=httpd enabled=true

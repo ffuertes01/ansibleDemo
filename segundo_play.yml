@@ -1,0 +1,6 @@
+- hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: Instalar lftp
+      yum: name=lftp state=latest
