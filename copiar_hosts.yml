@@ -1,0 +1,10 @@
+---	
+- name: Mi primer Playbook					
+  hosts: all								
+  remote_user: ec2-user
+  become: True								
+  tasks: 
+    - name: Copiar archivo hosts			
+      copy: src=/etc/hosts dest=/etc/hosts
+    - name: Copiar archivo nsswitch
+      copy: src=/etc/hosts dest=/etc/nsswitch
